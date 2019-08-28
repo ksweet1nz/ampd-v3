@@ -17,6 +17,13 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `projects`,
+        path: `content/projects/`,
+      },
+    },
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `AMPD Lab`,
@@ -29,6 +36,7 @@ module.exports = {
         icon: `src/images/ampd-icon.png`,
       },
     },
+    `gatsby-plugin-mdx`,
     `gatsby-plugin-offline`,
   ],
 }

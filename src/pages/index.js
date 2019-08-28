@@ -1,14 +1,20 @@
 import React from "react"
+import { Link } from "gatsby"
 
-import Projects from "../../src/components/projects/projects"
+import Projects from "../components/projects/projects"
+import Header from "../components/header"
+import Footer from "../components/footer"
 
-import "../../static/global-styles.css"
+import "../components/global-styles.css"
 
 const Index = () => {
     return (
-        <Projects>
-            
-        </Projects>
+        <>
+            <Header />
+            <Projects />
+            <Link to="/first-mdx/">Post Page</Link>
+            <Footer />
+        </>
     )
 }
 
