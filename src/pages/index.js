@@ -1,3 +1,16 @@
 import React from "react"
 
-export default () => <div>Hello world!</div>
+import Projects from "../../src/components/projects/projects"
+
+import "../../static/global-styles.css"
+
+const Index = () => {
+    return (
+        <Projects>
+            
+        </Projects>
+    )
+}
+
+export default Index
+
