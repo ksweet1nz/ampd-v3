@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-starter-hello-world",
+  "name": "ampd-v3",
   "private": true,
-  "description": "A simplified bare-bones starter for Gatsby",
-  "version": "0.1.0",
+  "description": "Showcase for AMPD Lab",
+  "version": "1.0.0",
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
@@ -24,6 +24,7 @@
     "gatsby-plugin-react-helmet": "^3.1.5",
     "gatsby-plugin-sharp": "^2.2.18",
     "gatsby-plugin-styled-components": "^3.1.3",
+    "gatsby-remark-images": "^3.1.19",
     "gatsby-source-filesystem": "^2.1.18",
     "gatsby-transformer-sharp": "^2.2.12",
     "react": "^16.9.0",
@@ -38,9 +39,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-hello-world"
+    "url": "https://github.com/ksweet1nz/ampd-v3.git"
   },
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/ksweet1nz/ampd-v3/issues"
   }
 }

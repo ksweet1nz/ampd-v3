@@ -36,7 +36,16 @@ module.exports = {
         icon: `src/images/ampd-icon.png`,
       },
     },
-    `gatsby-plugin-mdx`,
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        gatsbyRemarkPlugins: [
+          {
+            resolve: 'gatsby-remark-images',
+          }
+        ]
+      }
+    },
     `gatsby-plugin-offline`,
   ],
 }

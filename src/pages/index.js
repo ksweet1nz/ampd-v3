@@ -1,20 +1,46 @@
 import React from "react"
-import { Link } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
 
-import Projects from "../components/projects/projects"
+import Layout from "../components/layout"
+import ProjectList from "../components/projects/ProjectList"
 import Header from "../components/header"
 import Footer from "../components/footer"
 
-import "../components/global-styles.css"
+
+
+const getProjects = graphql`
+{
+    allMdx(sort: {fields: frontmatter___date, order: DESC}) {
+        edges {
+            node {
+            frontmatter {
+                title
+                slug
+                date(formatString: "MMMM Do, YYYY")
+                author
+                image {
+                childImageSharp {
+                    fluid {
+                    ...GatsbyImageSharpFluid_withWebp
+                    }
+                }
+                }
+            }
+            }
+        }
+    }
+}
+`
 
 const Index = () => {
+    const response = useStaticQuery(getProjects)
+    const projects = response.allMdx.edges
     return (
-        <>
-            <Header />
-            <Projects />
-            <Link to="/first-mdx/">Post Page</Link>
-            <Footer />
-        </>
+        <Layout>
+            
+            <ProjectList projects={projects} />
+           
+        </Layout>
     )
 }
 

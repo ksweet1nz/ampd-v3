@@ -2,7 +2,8 @@
 :root {
   --main-bg-color: #2D2D2D;
   --main-txt-color: #F8F8F8;
-  --main-pop-color: #ff009c;
+  --main-pop-color: #ff009c; 
+  --main-lt-pop-color: #ff99d7;
 }
 
  /* Reset */
@@ -45,6 +46,4 @@ html {
     color:var(--main-txt-color);
   }
 
-
-  /* Testing Things */
-
+/* Testing Things */
