@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import ProjectCard from './ProjectCard'
+import ProjectCard from './project-card'
 
 const Projects = styled.section`
   display: grid;

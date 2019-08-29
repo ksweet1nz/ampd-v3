@@ -2,11 +2,7 @@ import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 
 import Layout from "../components/layout"
-import ProjectList from "../components/projects/ProjectList"
-import Header from "../components/header"
-import Footer from "../components/footer"
-
-
+import ProjectList from "../components/projects/project-list"
 
 const getProjects = graphql`
 {
@@ -37,9 +33,7 @@ const Index = () => {
     const projects = response.allMdx.edges
     return (
         <Layout>
-            
             <ProjectList projects={projects} />
-           
         </Layout>
     )
 }
