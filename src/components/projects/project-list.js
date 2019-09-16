@@ -1,7 +1,7 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from "react"
+import styled from "styled-components"
 
-import ProjectCard from './project-card'
+import ProjectCard from "./project-card2"
 
 const Projects = styled.section`
   display: grid;
@@ -11,11 +11,10 @@ const Projects = styled.section`
   width: 85%;
 `
 
-const ProjectList = ({projects}) => {
-  
+const ProjectList = ({ projects }) => {
   return (
     <Projects>
-      {projects.map(({node}, index) => {
+      {projects.map(({ node }, index) => {
         return <ProjectCard key={index} project={node} />
       })}
     </Projects>
