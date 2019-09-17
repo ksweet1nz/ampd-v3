@@ -1,9 +1,13 @@
 /* CSS Variables */
 :root {
-  --main-bg-color: #2D2D2D;
+  --main-bg-color: #1f1f1f;
   --main-txt-color: #F8F8F8;
   --main-pop-color: #ff009c; 
   --main-lt-pop-color: #ff99d7;
+  --master-color: #ff009c;
+  --summer-color: #00ff37;
+  --phd-color: #eeff00;
+  --grant-color: #00ffff;
 }
 
  /* Reset */

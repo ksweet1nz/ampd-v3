@@ -15,6 +15,7 @@ const getProjects = graphql`
             date(formatString: "MMMM Do, YYYY")
             author
             level
+            bgcolor
             image {
               childImageSharp {
                 fluid {

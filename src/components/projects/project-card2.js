@@ -20,14 +20,20 @@ import { Link } from "gatsby"
 const ProjectItem = styled.article`
   height: 100%;
   position: relative;
+  overflow: hidden;
   width: 100%;
   &:hover .title-block {
     opacity: 0.8;
   }
+  .gatsby-image-wrapper  {
+    transition: transform .2s ease;
+  }
+  &:hover .gatsby-image-wrapper {
+    transform: scale(1.2);
+  }
   .title-block {
     position: absolute;
-    /* background-color: var(--main-pop-color); */
-    background-color: ${props => (props.master ? "white" : "palevioletred")};
+    background-color: ${props => props.background};
     bottom: 0;
     height: 100%;
     left: 0;
@@ -38,6 +44,7 @@ const ProjectItem = styled.article`
     transition: 0.5s ease;
     width: 100%;
   }
+  
 `
 
 const StyledLink = styled(Link)`
@@ -45,11 +52,11 @@ const StyledLink = styled(Link)`
 `
 
 const ProjectCard = ({ project }) => {
-  const { title, author, slug, level } = project.frontmatter
+  const { title, author, slug, bgcolor, level } = project.frontmatter
   const img = project.frontmatter.image.childImageSharp.fluid
-
+  console.log(bgcolor)
   return (
-    <ProjectItem>
+    <ProjectItem background={bgcolor}>
       <StyledLink to={slug}>
         <Image fluid={img} />
         <div className="title-block">

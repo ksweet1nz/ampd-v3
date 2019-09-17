@@ -20,6 +20,11 @@ const Body = styled.div`
   margin: 2rem;
 `
 
+const StyledImage = styled(Image)`
+  width: 50%;
+  margin: 0 auto;
+`
+
 const projectTemplate = ({ data }) => {
   const { title, date, author, image } = data.mdx.frontmatter
   const { body } = data.mdx
@@ -33,7 +38,7 @@ const projectTemplate = ({ data }) => {
           <h4>{author}</h4>
           <h4>{date}</h4>
         </TitleBlock>
-        <Image fluid={img} />
+        <StyledImage fluid={img} />
         <Body>
           <MDXRenderer>{body}</MDXRenderer>
         </Body>
