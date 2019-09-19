@@ -7,22 +7,37 @@ import { MDXRenderer } from "gatsby-plugin-mdx"
 import Layout from "../components/layout"
 
 const Wrapper = styled.section`
-  border: 1px solid var(--main-lt-pop-color);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas:
+    "image title title"
+    "body body body";
+  flex-grow: 1;
   margin: 2rem auto 5rem;
   width: 85%;
 `
 
 const TitleBlock = styled.div`
-  margin: 2rem;
+  background: var(--main-pop-color);
+  grid-area: title;
+
+  padding: 2rem;
+  text-transform: capitalize;
 `
 
 const Body = styled.div`
-  margin: 2rem;
+  border-bottom: 1px solid var(--main-lt-pop-color);
+  border-left: 1px solid var(--main-lt-pop-color);
+  border-right: 1px solid var(--main-lt-pop-color);
+  grid-area: body;
+  padding: 2rem;
+  p {
+    padding-bottom: 1rem;
+  }
 `
 
 const StyledImage = styled(Image)`
-  width: 50%;
-  margin: 0 auto;
+  grid-area: image;
 `
 
 const projectTemplate = ({ data }) => {
