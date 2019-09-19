@@ -20,7 +20,6 @@ const Wrapper = styled.section`
 const TitleBlock = styled.div`
   background: var(--main-pop-color);
   grid-area: title;
-
   padding: 2rem;
   text-transform: capitalize;
 `
@@ -36,8 +35,9 @@ const Body = styled.div`
   }
 `
 
-const StyledImage = styled(Image)`
+const TitleImage = styled.div`
   grid-area: image;
+  object-fit: cover;
 `
 
 const projectTemplate = ({ data }) => {
@@ -53,7 +53,9 @@ const projectTemplate = ({ data }) => {
           <h4>{author}</h4>
           <h4>{date}</h4>
         </TitleBlock>
-        <StyledImage fluid={img} />
+        <TitleImage>
+          <Image fluid={img} />
+        </TitleImage>
         <Body>
           <MDXRenderer>{body}</MDXRenderer>
         </Body>
