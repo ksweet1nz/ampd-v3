@@ -1,10 +1,10 @@
-import React from 'react'
-import { graphql } from 'gatsby'
-import styled from 'styled-components'
-import Image from 'gatsby-image'
-import { MDXRenderer } from 'gatsby-plugin-mdx'
+import React from "react"
+import { graphql } from "gatsby"
+import styled from "styled-components"
+import Image from "gatsby-image"
+import { MDXRenderer } from "gatsby-plugin-mdx"
 
-import Layout from '../components/layout'
+import Layout from "../components/layout"
 
 const Wrapper = styled.section`
   border: 1px solid var(--main-lt-pop-color);
@@ -48,24 +48,24 @@ const projectTemplate = ({ data }) => {
 }
 
 export const query = graphql`
-query getProject($slug:String!){
-  mdx (frontmatter:{slug:{eq:$slug}}){
-    frontmatter {
-      title
-      slug
-      date(formatString: "MMM do, YYYY")
-      author
-      image {
-        childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid_withWebp
+  query getProject($slug: String!) {
+    mdx(frontmatter: { slug: { eq: $slug } }) {
+      frontmatter {
+        title
+        slug
+        date(formatString: "YYYY")
+        author
+        image {
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid_withWebp
+            }
           }
         }
       }
+      body
     }
-    body
   }
-}
 `
 
 export default projectTemplate

@@ -1,50 +1,56 @@
-import React from 'react'
-import Image from 'gatsby-image'
-import styled from 'styled-components'
-import { Link } from 'gatsby'
-
-const TitleBlock = styled.div`
-  position: absolute;
-  background-color: var(--main-pop-color);
-  bottom: 0;
-  height: 100%;
-  left: 0;
-  opacity: 0;
-  padding-right: 1rem;
-  right: 0;
-  text-align: right;
-  transition: .5s ease;
-  width: 100%;
-`
+import React from "react"
+import Image from "gatsby-image"
+import styled from "styled-components"
+import { Link } from "gatsby"
 
 const ProjectItem = styled.article`
   height: 100%;
   position: relative;
+  overflow: hidden;
   width: 100%;
-  &:hover ${TitleBlock} {
-    opacity: 1;
+  &:hover .title-block {
+    opacity: 0.8;
+  }
+  .gatsby-image-wrapper {
+    transition: transform 0.2s ease;
+  }
+  &:hover .gatsby-image-wrapper {
+    transform: scale(1.2);
+  }
+  .title-block {
+    position: absolute;
+    background-color: ${props => props.background};
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    padding-top: 1rem;
+    padding-right: 1rem;
+    right: 0;
+    text-align: right;
+    text-transform: capitalize;
+    transition: 0.5s ease;
+    width: 100%;
   }
 `
 
 const StyledLink = styled(Link)`
   color: white;
-  
-  }
 `
 
-const ProjectCard = ({project}) => {
-  const { title, author, slug } = project.frontmatter
+const ProjectCard = ({ project }) => {
+  const { title, author, slug, bgcolor, level } = project.frontmatter
   const img = project.frontmatter.image.childImageSharp.fluid
-
-
+  console.log(bgcolor)
   return (
-    <ProjectItem> 
+    <ProjectItem background={bgcolor}>
       <StyledLink to={slug}>
-        <Image  fluid={img} />
-        <TitleBlock >
+        <Image fluid={img} />
+        <div className="title-block">
           <h2>{title}</h2>
           <h6>{author}</h6>
-        </TitleBlock>
+          <h6>{level}</h6>
+        </div>
       </StyledLink>
     </ProjectItem>
   )
